@@ -358,7 +358,7 @@ with st.sidebar:
 
 # ─── Main Area ──────────────────────────────────────────────────────────────────
 st.markdown('<div class="hero-title">AI Video Assistant</div>', unsafe_allow_html=True)
-st.markdown('<div class="hero-sub">Transcribe · Summarise · Chat with your meetings</div>', unsafe_allow_html=True)
+st.markdown('<div class="hero-sub">Transcribe · Summarise · Chat with your Transcript</div>', unsafe_allow_html=True)
 st.markdown("---")
 
 # ── Run Pipeline ────────────────────────────────────────────────────────────────
@@ -482,7 +482,7 @@ if st.session_state.result:
     st.markdown("---")
 
     # ── RAG Chat ──────────────────────────────────────────────────────────────
-    st.markdown('<div style="font-family:\'Syne\',sans-serif;font-size:1.2rem;font-weight:700;margin-bottom:1rem">💬 Chat with your Meeting</div>', unsafe_allow_html=True)
+    st.markdown('<div style="font-family:\'Syne\',sans-serif;font-size:1.2rem;font-weight:700;margin-bottom:1rem">💬 Chat with your Transcript</div>', unsafe_allow_html=True)
 
     # Chat history display
     if st.session_state.chat_history:
