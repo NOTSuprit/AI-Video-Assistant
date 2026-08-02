@@ -9,7 +9,10 @@ from core.rag_engine import build_rag_chain, ask_question
 
 
 load_dotenv()
-
+import os
+if "COOKIES_TXT" in os.environ or st.secrets.get("COOKIES_TXT"):
+    with open("cookies.txt", "w") as f:
+        f.write(st.secrets["COOKIES_TXT"])
 # ─── Page Config ────────────────────────────────────────────────────────────────
 st.set_page_config(
     page_title="AI Video Assistant",

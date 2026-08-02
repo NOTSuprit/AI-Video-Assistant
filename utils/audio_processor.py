@@ -8,7 +8,7 @@ os.makedirs(DOWNLOAD_DIR,exist_ok = True)
 def download_youtube_audio(url :str) ->str:
     output_path = os.path.join(DOWNLOAD_DIR, "%(title)s.%(ext)s")
     ydl_opts = {
-        "format": "bestaudio/best",
+        "format": "140/251/bestaudio/best",
         "outtmpl": output_path,
         "postprocessors": [
             {
@@ -18,16 +18,22 @@ def download_youtube_audio(url :str) ->str:
             }
         ],
         "quiet": True,
+        "cookiefile": "cookies.txt",
         "extractor_args": {
-            "youtube": {"player_client": ["ios"]}
+            "youtube": {"player_client": ["tv"]}
         },
+        "remote_components": ["ejs:github"],
     }
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
         info = ydl.extract_info(url, download=True)
-        filename = ydl.prepare_filename(info).replace(".webm", ".wav").replace(".m4a", ".wav")
+        raw_filename = ydl.prepare_filename(info)
+        # FFmpegExtractAudio always converts to the target codec's extension
+        # (here .wav), regardless of the original container — so just swap
+        # whatever extension yt-dlp reports for .wav, rather than guessing
+        # from a hardcoded list of possible source extensions.
+        base, _ = os.path.splitext(raw_filename)
+        filename = base + ".wav"
     return filename
-
-
 
 def convert_to_wav(input_path: str) -> str:
     """Convert any audio/video file to WAV format using pydub."""
