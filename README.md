@@ -46,7 +46,7 @@ No transcript ever needs to leave your machine to get to step 3 — the heavy li
 
 Session title, key challenges, and root-cause breakdown generated automatically from the transcript.
 
-![Summary view]([./assets/summary-view.png](https://github.com/NOTSuprit/AI-Video-Assistant/blob/main/utils/Screenshot%202026-08-03%20at%2003.17.45.png))
+![Summary view](./utils/Screenshot%202026-08-03%20at%2003.17.45.png)
 
 </td>
 <td width="50%">
@@ -55,7 +55,7 @@ Session title, key challenges, and root-cause breakdown generated automatically 
 
 Extracted action items and open questions, plus the chat interface for asking follow-up questions.
 
-![Action items and chat]([./assets/action-items-chat.png](https://github.com/NOTSuprit/AI-Video-Assistant/blob/main/utils/Screenshot%202026-08-03%20at%2003.18.00.png))
+![Action items and chat](./utils/Screenshot%202026-08-03%20at%2003.18.00.png)
 
 </td>
 </tr>
@@ -63,7 +63,7 @@ Extracted action items and open questions, plus the chat interface for asking fo
 
 **Chat with your transcript, grounded in the source material:**
 
-![RAG chat with quoted evidence]([./assets/rag-chat.png](https://github.com/NOTSuprit/AI-Video-Assistant/blob/main/utils/Screenshot%202026-08-03%20at%2003.19.07.png))
+![RAG chat with quoted evidence](./utils/Screenshot%202026-08-03%20at%2003.19.07.png)
 
 ---
 
