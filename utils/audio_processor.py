@@ -1,6 +1,7 @@
 import yt_dlp
 from pydub import AudioSegment
 import os
+from deno_setup import ensure_deno
 
 DOWNLOAD_DIR = 'downloades'
 os.makedirs(DOWNLOAD_DIR,exist_ok = True)
@@ -8,7 +9,7 @@ os.makedirs(DOWNLOAD_DIR,exist_ok = True)
 def download_youtube_audio(url :str) ->str:
     output_path = os.path.join(DOWNLOAD_DIR, "%(title)s.%(ext)s")
     ydl_opts = {
-        "format": "140/251/bestaudio/best",
+        "format": "18/bestaudio/best",
         "outtmpl": output_path,
         "postprocessors": [
             {
@@ -20,7 +21,7 @@ def download_youtube_audio(url :str) ->str:
         "quiet": True,
         "cookiefile": "cookies.txt",
         "extractor_args": {
-            "youtube": {"player_client": ["tv"]}
+            "youtube": {"player_client": ["android", "ios", "web"],"jsinterp_path": [ensure_deno()]}
         },
         "remote_components": ["ejs:github"],
     }

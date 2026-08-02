@@ -6,3 +6,4 @@ vector_db/
 downloades/
 venv/
 cookies.txt
+.streamlit/secrets.toml
